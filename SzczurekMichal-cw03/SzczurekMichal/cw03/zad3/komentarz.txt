@@ -1,0 +1,1 @@
+Foldery i pliki testujące działanie programu zostały stweorzone z myślą o wyszukiwaniu słowa "ala".

@@ -1,0 +1,9 @@
+Program zawiera możliwość zastosowania flagi "-r" i napisania po niej 1 liczby N i pary plików.
+Skutkuje to mergowaniem wskazanej pary N razy i ułatwia tworzenie testów na wielu plikach.
+Testy wykonano, analogicznie jak w zadaniu pierwszym, dla poziomów optymalizacji 0, 1, 2, 3 i s oraz dla 3 wariantów używania bibliotek
+(statycznie, dynamicznie i używając bibliotek współdzielonych).
+
+Testy nie wskazały czy korzystanie z procesów potomnych ma jednoznaczny wpływa na czas działania programu -
+Program z laboratorium 1 zdawał się nieco lepiej działać dla testu polegającego na 5- krotnym mergowaniu dużego pliku, jednak w innych testach nierzadko szybszy był program z laboratorium 3.
+
+Wprawdzie zwiększenie ilości procesów umożliwia wykonywanie się operacji równocześnie, jednak wymaga skopiowania zmiennych procesu macierzystego. Ponadtto procesy moga konkurować o dostęp do pliku, jako, że w testach mergowana jest N razy ta sama para.

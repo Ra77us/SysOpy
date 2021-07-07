@@ -1,0 +1,435 @@
+
+ ******************** OPTIMIZATION TEST FOR O0 ******************** 
+
+
+ >>>>>>> STATIC TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.050000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.470000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.140000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.380000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+ >>>>>>> SHARED TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.090000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 0.850000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.150000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.530000 s.
+User time: 0.000000 s.
+System time: 0.020000 s.
+
+ >>>>>>> DLL TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.070000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.950000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.270000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.600000 s.
+User time: 0.000000 s.
+System time: 0.030000 s.
+
+ ******************** OPTIMIZATION TEST FOR O1 ******************** 
+
+
+ >>>>>>> STATIC TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.040000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.210000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.500000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.150000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 0.970000 s.
+User time: 0.000000 s.
+System time: 0.030000 s.
+
+ >>>>>>> SHARED TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.070000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.130000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.200000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.440000 s.
+User time: 0.000000 s.
+System time: 0.050000 s.
+
+ >>>>>>> DLL TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.070000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.990000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.160000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.320000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+ ******************** OPTIMIZATION TEST FOR O2 ******************** 
+
+
+ >>>>>>> STATIC TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.050000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 0.960000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.230000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.200000 s.
+User time: 0.000000 s.
+System time: 0.040000 s.
+
+ >>>>>>> SHARED TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.070000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.240000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.170000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.680000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+ >>>>>>> DLL TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.080000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.920000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.220000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 2.710000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ ******************** OPTIMIZATION TEST FOR O3 ******************** 
+
+
+ >>>>>>> STATIC TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.020000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.140000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 2.570000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.380000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.470000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+ >>>>>>> SHARED TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.070000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.870000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.180000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.060000 s.
+User time: 0.010000 s.
+System time: 0.000000 s.
+
+ >>>>>>> DLL TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.040000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.100000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 3.280000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.230000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.340000 s.
+User time: 0.000000 s.
+System time: 0.020000 s.
+
+ ******************** OPTIMIZATION TEST FOR Os ******************** 
+
+
+ >>>>>>> STATIC TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.020000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.130000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.580000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.160000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.280000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+ >>>>>>> SHARED TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.080000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 1.190000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.220000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.380000 s.
+User time: 0.010000 s.
+System time: 0.000000 s.
+
+ >>>>>>> DLL TEST: 
+
+
+ File sequence: -r 5 small.txt:small.txt 
+Real time: 0.010000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 medium.txt:medium.txt 
+Real time: 0.070000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 5 big.txt:big.txt 
+Real time: 0.950000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 20 medium.txt:medium.txt 
+Real time: 0.150000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+ File sequence: -r 100 medium.txt:medium.txt 
+Real time: 1.150000 s.
+User time: 0.000000 s.
+System time: 0.040000 s.
