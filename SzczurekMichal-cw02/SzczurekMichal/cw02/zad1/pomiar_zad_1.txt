@@ -1,0 +1,54 @@
+=== Test for lib version ===
+
+Times for small_a.txt and medium_b.txt
+Real time: 0.240000
+User time: 0.010000
+System time: 0.050000
+
+Times for small_a.txt and big_b.txt
+Real time: 1.370000
+User time: 0.150000
+System time: 0.310000
+
+Times for medium_a.txt and medium_b.txt
+Real time: 0.300000
+User time: 0.040000
+System time: 0.080000
+
+Times for medium_a.txt and big_b.txt
+Real time: 1.360000
+User time: 0.120000
+System time: 0.310000
+
+Times for big_a.txt and big_b.txt
+Real time: 2.700000
+User time: 0.290000
+System time: 0.510000
+
+=== Test for sys version ===
+
+Times for small_a.txt and medium_b.txt
+Real time: 0.940000
+User time: 0.250000
+System time: 0.660000
+
+Times for small_a.txt and big_b.txt
+Real time: 8.900000
+User time: 2.630000
+System time: 6.230000
+
+Times for medium_a.txt and medium_b.txt
+Real time: 2.280000
+User time: 0.630000
+System time: 1.620000
+
+Times for medium_a.txt and big_b.txt
+Real time: 9.770000
+User time: 1.830000
+System time: 7.850000
+
+Times for big_a.txt and big_b.txt
+Real time: 16.220000
+User time: 4.750000
+System time: 11.390000
+

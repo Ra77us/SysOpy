@@ -1,0 +1,2 @@
+We wszyskich testach program korzystający z funkcji systemowych wykonywał się kilkakrotnie dłużej od alternatywy wykorzystującej funkcje bibliotecznych jeśli chodzi o czas rzeczywisty. W przypadku funkcji bibliotecznych czas systemowy zazwyczaj był bliski 0, w przeciwieństwie dla programów korzystających funkcji systemowych - w tych czas systemowy potrafił być dłuższy niż nawet 3s.
+Wynika to najprawdopodobniej z faktu, że funkcje biblioteczne wczytują całe fragmentu pliku co jest korzystne w przypadku wielokrotnego odczytywania małych danych - co też robię.

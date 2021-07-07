@@ -1,0 +1,64 @@
+=== Test for lib version ===
+
+Replacing 0000 for ________ in small.txt
+Real time: 0.020000
+User time: 0.000000
+System time: 0.000000
+
+Replacing 0000 for ________ in medium.txt
+Real time: 0.120000
+User time: 0.090000
+System time: 0.000000
+
+Replacing 0000 for ________ in big.txt
+Real time: 0.390000
+User time: 0.060000
+System time: 0.200000
+
+Replacing A for ________ in small.txt
+Real time: 0.050000
+User time: 0.000000
+System time: 0.020000
+
+Replacing A for ________ in medium.txt
+Real time: 0.120000
+User time: 0.090000
+System time: 0.020000
+
+Replacing A for ________ in big.txt
+Real time: 0.410000
+User time: 0.340000
+System time: 0.050000
+
+=== Test for sys version ===
+
+Replacing 0000 for ________ in small.txt
+Real time: 0.720000
+User time: 0.110000
+System time: 0.600000
+
+Replacing 0000 for ________ in medium.txt
+Real time: 4.800000
+User time: 1.160000
+System time: 3.620000
+
+Replacing 0000 for ________ in big.txt
+Real time: 20.310000
+User time: 4.220000
+System time: 16.050000
+
+Replacing A for ________ in small.txt
+Real time: 0.800000
+User time: 0.180000
+System time: 0.620000
+
+Replacing A for ________ in medium.txt
+Real time: 5.000000
+User time: 0.980000
+System time: 3.950000
+
+Replacing A for ________ in big.txt
+Real time: 22.600000
+User time: 4.890000
+System time: 17.670000
+

@@ -1,0 +1,94 @@
+=== Test for lib version ===
+
+Times for A character and small.txt file
+Real time: 0.010000
+User time: 0.000000
+System time: 0.000000
+
+Times for B character and small.txt file
+Real time: 0.020000
+User time: 0.000000
+System time: 0.000000
+
+Times for . character and small.txt file
+Real time: 0.000000
+User time: 0.000000
+System time: 0.000000
+
+Times for A character and medium.txt file
+Real time: 0.200000
+User time: 0.010000
+System time: 0.040000
+
+Times for B character and medium.txt file
+Real time: 0.230000
+User time: 0.030000
+System time: 0.050000
+
+Times for . character and medium.txt file
+Real time: 0.040000
+User time: 0.030000
+System time: 0.000000
+
+Times for A character and big.txt file
+Real time: 0.160000
+User time: 0.150000
+System time: 0.010000
+
+Times for B character and big.txt file
+Real time: 0.150000
+User time: 0.120000
+System time: 0.020000
+
+Times for . character and big.txt file
+Real time: 0.130000
+User time: 0.120000
+System time: 0.000000
+
+=== Test for sys version ===
+
+Times for A character and small.txt file
+Real time: 0.090000
+User time: 0.010000
+System time: 0.080000
+
+Times for B character and small.txt file
+Real time: 0.110000
+User time: 0.020000
+System time: 0.090000
+
+Times for . character and small.txt file
+Real time: 0.040000
+User time: 0.020000
+System time: 0.020000
+
+Times for A character and medium.txt file
+Real time: 1.250000
+User time: 0.290000
+System time: 0.900000
+
+Times for B character and medium.txt file
+Real time: 1.290000
+User time: 0.360000
+System time: 0.920000
+
+Times for . character and medium.txt file
+Real time: 0.430000
+User time: 0.160000
+System time: 0.270000
+
+Times for A character and big.txt file
+Real time: 2.370000
+User time: 1.050000
+System time: 1.320000
+
+Times for B character and big.txt file
+Real time: 2.370000
+User time: 0.940000
+System time: 1.420000
+
+Times for . character and big.txt file
+Real time: 2.520000
+User time: 1.040000
+System time: 1.470000
+
