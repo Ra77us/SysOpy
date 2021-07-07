@@ -1,6 +1,0 @@
-Przykładowe wywołanie catcher:
-./catcher KILL / SIGRT / SIGQUE
-Przykładowe wywołanie sender:
-./sender <PID catchera> 1000 KILL / SIGRT / SIGQUE
-
-W przeciwieństwie do alternatyw, podczas użycia SIGRT nie dochodziło do gubienia sygnałów.
