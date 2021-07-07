@@ -1,0 +1,5 @@
+Opcje optymalizacji zdają się poprawiać czas wykonania (wraz ze wzrostem liczby poziomu). 
+Nie mogę tego jednak stwierdzić z pełną pewnością, ponieważ wyniki identycznych testów znacznie się
+od siebie różnią, podczas ich powtórzenia, co utrudnia pomiar. Może wynikać to z użycia maszyny wirtualnej.
+Zauważyłem natomiast wzrost rozmairu plików wraz ze wzrostem poziomu optymalizacji.
+Wyjątkiem jest użycie opcji s - optymalizującej kompilację pod wzgledem rozmiaru plików.

@@ -1,0 +1,236 @@
+
+ >>>>>>> STATIC TEST: 
+
+
+ ===== TEST FOR small.txt AND small.txt. =====
+TEST CONSIST OF 5 STANDARD OPERATIONS AND 3 CONSEQUENT OPERATIONS CONSISTING OF 2 FILES
+
+Total time of merging:
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+Total time of allocating blocks:
+Real time: 0.020000 s.
+User time: 0.000000 s.
+System time: 0.010000 s.
+
+Total time of removing blocks:
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 0.020000 s.
+User time: 0.010000 s.
+System time: 0.010000 s.
+
+ ===== TEST FOR medium.txt AND medium.txt. =====
+TEST CONSIST OF 5 STANDARD OPERATIONS AND 3 CONSEQUENT OPERATIONS CONSISTING OF 2 FILES
+
+Total time of merging:
+Real time: 0.110000 s.
+User time: 0.010000 s.
+System time: 0.040000 s.
+
+Total time of allocating blocks:
+Real time: 0.260000 s.
+User time: 0.020000 s.
+System time: 0.240000 s.
+
+Total time of removing blocks:
+Real time: 0.000000 s.
+User time: 0.010000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 0.100000 s.
+User time: 0.080000 s.
+System time: 0.020000 s.
+
+ ===== TEST FOR big.txt AND big.txt. =====
+TEST CONSIST OF 5 STANDARD OPERATIONS AND 3 CONSEQUENT OPERATIONS CONSISTING OF 2 FILES
+
+Total time of merging:
+Real time: 2.290000 s.
+User time: 0.520000 s.
+System time: 1.400000 s.
+
+Total time of allocating blocks:
+Real time: 5.640000 s.
+User time: 0.790000 s.
+System time: 4.860000 s.
+
+Total time of removing blocks:
+Real time: 0.220000 s.
+User time: 0.210000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 2.880000 s.
+User time: 1.780000 s.
+System time: 1.100000 s.
+
+ ===== TEST FOR medium.txt AND medium.txt. =====
+TEST CONSIST OF 20 STANDARD OPERATIONS AND 5 CONSEQUENT OPERATIONS CONSISTING OF 5 FILES
+
+Total time of merging:
+Real time: 0.520000 s.
+User time: 0.070000 s.
+System time: 0.190000 s.
+
+Total time of allocating blocks:
+Real time: 0.080000 s.
+User time: 0.180000 s.
+System time: 0.140000 s.
+
+Total time of removing blocks:
+Real time: 0.020000 s.
+User time: 0.020000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 0.630000 s.
+User time: 0.420000 s.
+System time: 0.200000 s.
+
+ ===== TEST FOR medium.txt AND medium.txt. =====
+TEST CONSIST OF 100 STANDARD OPERATIONS AND 10 CONSEQUENT OPERATIONS CONSISTING OF 10 FILES
+
+Total time of merging:
+Real time: 0.600000 s.
+User time: 0.210000 s.
+System time: 0.850000 s.
+
+Total time of allocating blocks:
+Real time: 0.810000 s.
+User time: 0.390000 s.
+System time: 0.660000 s.
+
+Total time of removing blocks:
+Real time: 0.120000 s.
+User time: 0.060000 s.
+System time: 0.050000 s.
+
+Total time of consequent adding and removing:
+Real time: 2.230000 s.
+User time: 0.630000 s.
+System time: 1.610000 s.
+
+ >>>>>>> SHARED TEST: 
+
+
+ ===== TEST FOR small.txt AND small.txt. =====
+TEST CONSIST OF 5 STANDARD OPERATIONS AND 3 CONSEQUENT OPERATIONS CONSISTING OF 2 FILES
+
+Total time of merging:
+Real time: 0.020000 s.
+User time: 0.020000 s.
+System time: 0.000000 s.
+
+Total time of allocating blocks:
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+Total time of removing blocks:
+Real time: 0.000000 s.
+User time: 0.000000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 0.000000 s.
+User time: 0.010000 s.
+System time: 0.000000 s.
+
+ ===== TEST FOR medium.txt AND medium.txt. =====
+TEST CONSIST OF 5 STANDARD OPERATIONS AND 3 CONSEQUENT OPERATIONS CONSISTING OF 2 FILES
+
+Total time of merging:
+Real time: 0.080000 s.
+User time: 0.010000 s.
+System time: 0.040000 s.
+
+Total time of allocating blocks:
+Real time: 0.040000 s.
+User time: 0.030000 s.
+System time: 0.010000 s.
+
+Total time of removing blocks:
+Real time: 0.010000 s.
+User time: 0.010000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 0.100000 s.
+User time: 0.060000 s.
+System time: 0.050000 s.
+
+ ===== TEST FOR big.txt AND big.txt. =====
+TEST CONSIST OF 5 STANDARD OPERATIONS AND 3 CONSEQUENT OPERATIONS CONSISTING OF 2 FILES
+
+Total time of merging:
+Real time: 0.880000 s.
+User time: 0.380000 s.
+System time: 0.500000 s.
+
+Total time of allocating blocks:
+Real time: 1.030000 s.
+User time: 0.550000 s.
+System time: 0.480000 s.
+
+Total time of removing blocks:
+Real time: 0.140000 s.
+User time: 0.140000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 2.420000 s.
+User time: 1.490000 s.
+System time: 0.920000 s.
+
+ ===== TEST FOR medium.txt AND medium.txt. =====
+TEST CONSIST OF 20 STANDARD OPERATIONS AND 5 CONSEQUENT OPERATIONS CONSISTING OF 5 FILES
+
+Total time of merging:
+Real time: 0.230000 s.
+User time: 0.060000 s.
+System time: 0.140000 s.
+
+Total time of allocating blocks:
+Real time: 0.170000 s.
+User time: 0.090000 s.
+System time: 0.070000 s.
+
+Total time of removing blocks:
+Real time: 0.020000 s.
+User time: 0.020000 s.
+System time: 0.000000 s.
+
+Total time of consequent adding and removing:
+Real time: 0.550000 s.
+User time: 0.340000 s.
+System time: 0.220000 s.
+
+ ===== TEST FOR medium.txt AND medium.txt. =====
+TEST CONSIST OF 100 STANDARD OPERATIONS AND 10 CONSEQUENT OPERATIONS CONSISTING OF 10 FILES
+
+Total time of merging:
+Real time: 0.930000 s.
+User time: 0.380000 s.
+System time: 0.690000 s.
+
+Total time of allocating blocks:
+Real time: 1.040000 s.
+User time: 0.550000 s.
+System time: 0.480000 s.
+
+Total time of removing blocks:
+Real time: 0.100000 s.
+User time: 0.060000 s.
+System time: 0.040000 s.
+
+Total time of consequent adding and removing:
+Real time: 2.110000 s.
+User time: 1.110000 s.
+System time: 0.990000 s.

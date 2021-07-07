@@ -1,0 +1,11 @@
+Testy można wywołać poleceniem test X Y Z file1:file2 file3
+gdzie:
+X - to liczba zmergowań, alokacji bloków i usunięć
+Y - liczba plkiów biorąca udział w 1 serii alokacji i usunięć
+Z - liczba serii usunięć
+file1, file2 - mergowane pliki
+file3 - plik na wynik
+
+Ponadto program umożliwia również używanie innych funkcji bibliotecznych.
+Program umożliwia mergowanie większej serii plików, jednak w testach merguje sztucznie zwielokrotnioną jedną parę plików,
+by ułatwić przeprowadzanie testów dla 100 par - można to wykonać stosunkowo krótką komendą.

@@ -1,0 +1,10 @@
+Wyniki testów zdają się w nieznacznym stopniu wskazywać program wykorzystujący bibliotekę łączoną dynamicznie jako najszybszy.
+Różnica nie jest jednak duża i nie zawsze przemawia na jej korzyść, a ponadto może wynikać z użycia maszyny wirtualnej.
+Wzrto również uwzględnić fakt, że mierzono poszczególne operacje a nie działanie całych programów 
+(a więc nie zmierzono czasu ładowania funkcji w przypadku biblioteki współdzielonej).
+Najwięcej czasu zajmowało zazwyczaj zmergowanie plików i utworzenie pliku tymczasowego.
+Czas potrzebny na usuwanie bloków był zauważalnie mniejszy od czasów zmergowania plików i zaalokowania bloku.
+Czas rzeczywisty jest najdłuższym spośród badany i, zgodnie z oczekiwaniami, jest zbliżony do sumy czasu użytkownika i systemowego.
+Wadą użycia biblioteki statycznej jest większy rozmiar utworzonego pliku, 
+jednak program korzystający z biblioteki współdzielonej/ dynamicznie ładowanej musi ją załadowsać po uruchomieniu,
+co może spowodować (zazwyczaj nieznacznie) wolniejsze działanie.
