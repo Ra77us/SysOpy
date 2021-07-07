@@ -1,0 +1,7 @@
+w kliencie można użyć następujących komend:
+STOP
+DISCONNECT
+CONNECT [ID]
+LIST
+oraz po podłączeniu:
+MSG [TEXT]

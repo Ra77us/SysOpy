@@ -1,0 +1,141 @@
+Poniżej znajduje się kopia pliku generowanego przez make test.
+Uwaga testy mogą zająć kilka minut.
+
+Testy wykonałem dla n=5,30,5000. (dla 5000 wykorzystałem specjalne, odpowiednio duże pliki.)
+
+Wyniki były poprawne oprócz sytuacji gdy był więcej niż 1 konsument lub więcej niż 1 producent dla n=5000.
+Wynika to z faktu ograniczenia bufora pipe = 4kb - dane zostały utracone.
+
+Ostatni test polegający na wywołaniu programów w różnych terminalach również przeszedł pomyślnie. 
+(Również wykonany ręcznie dla 1 producenta i 1 konsumenta).
+Testy wymaga jednak wykonania sleep w makefile, by nie zacząć testowania poprawności wyniku przed końcem operacji.
+
+Jest to możliwe dzięki stworzeniu potoku nazwanego.
+
+tests for N=5
+
+=========================
+1 producer 1 consumer
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+=========================
+1 producer 5 consumers
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+=========================
+5 producers 1 consumer
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+QWERTYUIOPASDFGHJKLZXCVBNMQWE
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+qwertyuiopasdfghjklzxcvbnmqwe
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+=========================
+5 producentów 5 consumers
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+QWERTYUIOPASDFGHJKLZXCVBNMQWE
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+qwertyuiopasdfghjklzxcvbnmqwe
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+tests for N=25
+
+=========================
+1 producer 1 consumer
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+=========================
+1 producer 5 consumers
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+=========================
+5 producers 1 consumer
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+QWERTYUIOPASDFGHJKLZXCVBNMQWE
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+qwertyuiopasdfghjklzxcvbnmqwe
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+=========================
+5 producentów 5 consumers
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+
+output: 
+
+12345678900987654321123456789
+QWERTYUIOPASDFGHJKLZXCVBNMQWE
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+qwertyuiopasdfghjklzxcvbnmqwe
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+tests for N=5000
+
+(No output preview for big data)
+
+
+=========================
+1 producer 1 consumer
+Checking passed!
+
+=========================
+1 producer 5 consumers
+Checking failed!
+
+=========================
+5 producers 1 consumer
+Checking failed!
+Checking failed!
+Checking failed!
+Checking failed!
+Checking failed!
+
+=========================
+5 producentów 5 consumers
+Checking failed!
+Checking failed!
+Checking failed!
+Checking failed!
+Checking failed!
+
+test in different terminals:
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!
+Checking passed!

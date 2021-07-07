@@ -1,0 +1,18 @@
+składnik1 = cat /etc/passwd | wc -l | wc -l
+składnik2 = cat /etc/passwd
+składnik3 = wc -l
+składnik4 = ls -l
+składnik5 = who
+składnik6 = grep 0
+składnik7 = grep daemon
+składnik8 =  cat /etc/passwd |  grep daemon |  grep ,,, | wc -l
+
+składnik1
+składnik2
+składnik1 | składnik3 | składnik3
+składnik4
+składnik4 | składnik3
+składnik2 | składnik6 | składnik3
+składnik2 | składnik7
+składnik8
+składnik2 | składnik7 | składnik6 | składnik3
