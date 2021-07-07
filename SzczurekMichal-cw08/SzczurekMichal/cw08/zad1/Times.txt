@@ -1,0 +1,169 @@
+Testy wykonaem na maszynie wirtualnej mającej dostęp do 4 rdzeni procesora (rzeczywisty system ma dostęp do 8).
+
+Podziału w 1. wariancie dokonałem stosując algorytm zachłanny przydzielający poszczególnym wątkom kolejne wartości pikseli
+do przetworzenia aż liczba pikseli do przetworzenia nie przekroczy cąłkowitej liczby podzielonej przez liczbę wątków.
+Sposób ten dawał dość dobre rezultaty, co mozna zobaczyć w wydruku z programu.
+
+Dla 1. wariantu cąłkowity czas programu rośnie wraz ze wzrostem liczby wątków.
+Czas wykonywania się poszczególnych wątków jest uśredniając jednakowy.
+Wynika to z faktu, że najbardziej kosztownym elementem funkcji jest przejrzenie całej tablicy,
+a nie zamienienie wartości poszczególnych elementów. Wraz z liczbą wątków rośnie czas potrzebny na ich obsłużenie,
+jak i liczba przeglądnięć całej tablicy.
+
+Dla 2 wariantu najkrótszy był czas wykonywanie się programu dla 2 wątków.
+Poza tym całkowity czas rósł, jednak pozostawał zdecydowanie mniejszy niż ten dla 1. wariantu.
+Ponadto poszczególne wątki wykonywały się coraz szybciej wraz ze wzrostem ich liczby - 
+w jednym wątku trzeba było przejrzeć coraz mniejszy obszar tablicy.
+Całość nie zawsze była szybsza, ponieważ część czasu była tracona na tworzenie i zakończenie wątków.
+
+Poniżej znajduje się wydruk z programu:
+
+
+>>> POMIARY DLA WARIANTU 1 (NUMBERS):
+
+==================================   LICZBA WĄTKÓW: 1   ===================================
+It took 1346 microseconds for thred 1 to finish
+This thread has processed pixels in range 0 to 255. That is 262144 pixels in total
+
+Total time: 1549 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 2   ===================================
+It took 1567 microseconds for thred 1 to finish
+This thread has processed pixels in range 0 to 145. That is 134635 pixels in total
+It took 1403 microseconds for thred 2 to finish
+This thread has processed pixels in range 146 to 255. That is 127509 pixels in total
+
+Total time: 1789 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 4   ===================================
+It took 1557 microseconds for thred 1 to finish
+This thread has processed pixels in range 0 to 111. That is 67699 pixels in total
+It took 2819 microseconds for thred 2 to finish
+This thread has processed pixels in range 112 to 145. That is 66936 pixels in total
+It took 2682 microseconds for thred 3 to finish
+This thread has processed pixels in range 146 to 183. That is 63618 pixels in total
+It took 1123 microseconds for thred 4 to finish
+This thread has processed pixels in range 184 to 255. That is 63891 pixels in total
+
+Total time: 3026 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 8   ===================================
+It took 2380 microseconds for thred 1 to finish
+This thread has processed pixels in range 0 to 84. That is 34100 pixels in total
+It took 2593 microseconds for thred 2 to finish
+This thread has processed pixels in range 85 to 111. That is 33599 pixels in total
+It took 1862 microseconds for thred 3 to finish
+This thread has processed pixels in range 112 to 130. That is 34060 pixels in total
+It took 2127 microseconds for thred 4 to finish
+This thread has processed pixels in range 131 to 145. That is 32876 pixels in total
+It took 1658 microseconds for thred 5 to finish
+This thread has processed pixels in range 146 to 163. That is 31643 pixels in total
+It took 1458 microseconds for thred 6 to finish
+This thread has processed pixels in range 164 to 185. That is 35720 pixels in total
+It took 1839 microseconds for thred 7 to finish
+This thread has processed pixels in range 186 to 202. That is 33871 pixels in total
+It took 1036 microseconds for thred 8 to finish
+This thread has processed pixels in range 203 to 255. That is 26275 pixels in total
+
+Total time: 5094 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 16   ===================================
+It took 1071 microseconds for thred 1 to finish
+This thread has processed pixels in range 0 to 65. That is 17257 pixels in total
+It took 2229 microseconds for thred 2 to finish
+This thread has processed pixels in range 66 to 84. That is 16843 pixels in total
+It took 2262 microseconds for thred 3 to finish
+This thread has processed pixels in range 85 to 99. That is 17753 pixels in total
+It took 1490 microseconds for thred 4 to finish
+This thread has processed pixels in range 100 to 112. That is 15846 pixels in total
+It took 2360 microseconds for thred 5 to finish
+This thread has processed pixels in range 113 to 124. That is 19315 pixels in total
+It took 1475 microseconds for thred 6 to finish
+This thread has processed pixels in range 125 to 131. That is 17448 pixels in total
+It took 2488 microseconds for thred 7 to finish
+This thread has processed pixels in range 132 to 139. That is 18476 pixels in total
+It took 1539 microseconds for thred 8 to finish
+This thread has processed pixels in range 140 to 147. That is 16103 pixels in total
+It took 2224 microseconds for thred 9 to finish
+This thread has processed pixels in range 148 to 157. That is 18063 pixels in total
+It took 1463 microseconds for thred 10 to finish
+This thread has processed pixels in range 158 to 167. That is 16372 pixels in total
+It took 1351 microseconds for thred 11 to finish
+This thread has processed pixels in range 168 to 178. That is 17590 pixels in total
+It took 1245 microseconds for thred 12 to finish
+This thread has processed pixels in range 179 to 188. That is 16721 pixels in total
+It took 5116 microseconds for thred 13 to finish
+This thread has processed pixels in range 189 to 197. That is 16901 pixels in total
+It took 4765 microseconds for thred 14 to finish
+This thread has processed pixels in range 198 to 206. That is 17393 pixels in total
+It took 1332 microseconds for thred 15 to finish
+This thread has processed pixels in range 207 to 219. That is 15249 pixels in total
+It took 1294 microseconds for thred 16 to finish
+This thread has processed pixels in range 220 to 255. That is 4814 pixels in total
+
+Total time: 9649 microseconds
+
+
+
+>>> POMIARY DLA WARIANTU 2 (BLOCK):
+
+==================================   LICZBA WĄTKÓW: 1   ===================================
+It took 601 microseconds for thred 1 to finish
+
+Total time: 812 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 2   ===================================
+It took 304 microseconds for thred 1 to finish
+It took 286 microseconds for thred 2 to finish
+
+Total time: 487 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 4   ===================================
+It took 166 microseconds for thred 1 to finish
+It took 160 microseconds for thred 2 to finish
+It took 163 microseconds for thred 3 to finish
+It took 137 microseconds for thred 4 to finish
+
+Total time: 521 microseconds
+
+
+==================================   LICZBA WĄTKÓW: 8   ===================================
+It took 126 microseconds for thred 1 to finish
+It took 118 microseconds for thred 2 to finish
+It took 126 microseconds for thred 3 to finish
+It took 93 microseconds for thred 4 to finish
+It took 73 microseconds for thred 5 to finish
+It took 121 microseconds for thred 6 to finish
+It took 108 microseconds for thred 7 to finish
+It took 73 microseconds for thred 8 to finish
+
+Total time: 762 microseconds
+
+
+
+==================================   LICZBA WĄTKÓW: 16   ===================================
+It took 121 microseconds for thred 1 to finish
+It took 133 microseconds for thred 2 to finish
+It took 86 microseconds for thred 3 to finish
+It took 56 microseconds for thred 4 to finish
+It took 142 microseconds for thred 5 to finish
+It took 48 microseconds for thred 6 to finish
+It took 109 microseconds for thred 7 to finish
+It took 79 microseconds for thred 8 to finish
+It took 251 microseconds for thred 9 to finish
+It took 38 microseconds for thred 10 to finish
+It took 40 microseconds for thred 11 to finish
+It took 42 microseconds for thred 12 to finish
+It took 55 microseconds for thred 13 to finish
+It took 58 microseconds for thred 14 to finish
+It took 56 microseconds for thred 15 to finish
+It took 208 microseconds for thred 16 to finish
+
+Total time: 985 microseconds
+

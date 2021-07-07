@@ -1,0 +1,324 @@
+Program działa poprawnie dla wszystkich testowanych wartości N i M.
+
+Niemniej jednak zauważyłem pewien problem w opisie sytuacji:
+Jeśli kucharz wyciągnął pizze i "trzymał ją w rękach" przed zwolnieniem stołu to:
+	a) Informacja o ilości pizz w piecu podczas położenia ich na stole może nie być już aktualna
+	b) Informacja o wyjęciu pizzy z pieca zostaje podana dopiero podczas położenia jej na stole,
+	co w niektórych sytuacjach może pwodować mylne wrażenie, że inni kucharze wkładają pizze do pełnych pieców:
+	np. 3 razy pod rząd pojawia się wiadomość: Wkładam pizze X. W piecu jest 5 pizz.
+Aby rozjaśnić faktyczny stan symualcji dodałem jeszcze jeden komunikat opatrzony napisem [DODATKOWA INFORMACJA]
+pojawiający się w momencie wyjęcia pizzy z pieca (niekoniecznie położenia jej na stole).
+
+Przyjąłem interpretację, że kucharz może wyciągnąć inną pizzę, niż zrobił.
+
+Poniżej znajdują się fragmenty wydruku programu dla przykładowych M i N:
+
+
+
+Dla wersji 1:
+
+
+
+M = 3, N = 1
+========================================================================================================================
+((3823 22:35:11:341) Przygotowuję pizze: 8.
+(3824 22:35:11:341) Przygotowuję pizze: 2.
+(3825 22:35:11:341) Przygotowuję pizze: 1.
+(3823 22:35:12:369) Dodałem pizze: 8. Liczba pizz w piecu: 1.
+(3824 22:35:13:151) Dodałem pizze: 2. Liczba pizz w piecu: 2.
+(3825 22:35:13:151) Dodałem pizze: 1. Liczba pizz w piecu: 3.
+(3823 22:35:16:970) [DODATKOWA INFORMACJA] Wyjmuję pizze: 8 Na razie trzymam ją w rękach. Liczba pizz w piecu: 2.
+(3823 22:35:16:970) Wyjmuję pizze: 8. Liczba pizz w piecu: 2 Liczba pizz na stole: 1.
+(3823 22:35:16:970) Przygotowuję pizze: 5.
+(3826 22:35:16:970) Pobieram pizze: 8. Liczba pizz na stole: 0.
+(3825 22:35:17:170) [DODATKOWA INFORMACJA] Wyjmuję pizze: 2 Na razie trzymam ją w rękach. Liczba pizz w piecu: 1.
+(3825 22:35:17:170) Wyjmuję pizze: 2. Liczba pizz w piecu: 1 Liczba pizz na stole: 1.
+(3825 22:35:17:170) Przygotowuję pizze: 8.
+(3824 22:35:18:053) [DODATKOWA INFORMACJA] Wyjmuję pizze: 1 Na razie trzymam ją w rękach. Liczba pizz w piecu: 0.
+(3824 22:35:18:053) Wyjmuję pizze: 1. Liczba pizz w piecu: 0 Liczba pizz na stole: 2.
+(3824 22:35:18:053) Przygotowuję pizze: 8.
+(3825 22:35:18:390) Dodałem pizze: 8. Liczba pizz w piecu: 1.
+(3823 22:35:18:771) Dodałem pizze: 5. Liczba pizz w piecu: 2.
+(3824 22:35:19:456) Dodałem pizze: 8. Liczba pizz w piecu: 3.
+(3826 22:35:21:471) Dostarczam pizze: 8.
+(3825 22:35:22:803) [DODATKOWA INFORMACJA] Wyjmuję pizze: 8 Na razie trzymam ją w rękach. Liczba pizz w piecu: 2.
+(3825 22:35:22:803) Wyjmuję pizze: 8. Liczba pizz w piecu: 2 Liczba pizz na stole: 3.
+(3825 22:35:22:803) Przygotowuję pizze: 7.
+(3823 22:35:22:972) [DODATKOWA INFORMACJA] Wyjmuję pizze: 5 Na razie trzymam ją w rękach. Liczba pizz w piecu: 1.
+(3823 22:35:22:972) Wyjmuję pizze: 5. Liczba pizz w piecu: 1 Liczba pizz na stole: 4.
+(3823 22:35:22:972) Przygotowuję pizze: 7.
+(3824 22:35:23:861) [DODATKOWA INFORMACJA] Wyjmuję pizze: 8 Na razie trzymam ją w rękach. Liczba pizz w piecu: 0.
+(3824 22:35:23:861) Wyjmuję pizze: 8. Liczba pizz w piecu: 0 Liczba pizz na stole: 5.
+(3824 22:35:23:861) Przygotowuję pizze: 0.
+(3825 22:35:24:420) Dodałem pizze: 7. Liczba pizz w piecu: 1.
+(3823 22:35:24:472) Dodałem pizze: 7. Liczba pizz w piecu: 2.
+(3824 22:35:25:661) Dodałem pizze: 0. Liczba pizz w piecu: 3.
+(3826 22:35:25:773) Pobieram pizze: 2. Liczba pizz na stole: 4.
+
+
+M = 10, N = 10
+========================================================================================================================
+(3859 22:35:47:587) Przygotowuję pizze: 1.
+(3860 22:35:47:587) Przygotowuję pizze: 5.
+(3861 22:35:47:587) Przygotowuję pizze: 0.
+(3864 22:35:47:588) Przygotowuję pizze: 2.
+(3866 22:35:47:588) Przygotowuję pizze: 5.
+(3863 22:35:47:588) Przygotowuję pizze: 3.
+(3865 22:35:47:589) Przygotowuję pizze: 4.
+(3868 22:35:47:589) Przygotowuję pizze: 3.
+(3867 22:35:47:589) Przygotowuję pizze: 6.
+(3862 22:35:47:591) Przygotowuję pizze: 1.
+(3864 22:35:48:688) Dodałem pizze: 2. Liczba pizz w piecu: 1.
+(3863 22:35:48:789) Dodałem pizze: 3. Liczba pizz w piecu: 2.
+(3859 22:35:49:089) Dodałem pizze: 1. Liczba pizz w piecu: 3.
+(3865 22:35:49:090) Dodałem pizze: 4. Liczba pizz w piecu: 4.
+(3862 22:35:49:091) Dodałem pizze: 1. Liczba pizz w piecu: 5.
+(3865 22:35:53:094) [DODATKOWA INFORMACJA] Wyjmuję pizze: 2 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3865 22:35:53:094) Wyjmuję pizze: 2. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3865 22:35:53:094) Przygotowuję pizze: 6.
+(3860 22:35:53:095) Dodałem pizze: 5. Liczba pizz w piecu: 5.
+(3871 22:35:53:095) Pobieram pizze: 2. Liczba pizz na stole: 0.
+(3863 22:35:53:190) [DODATKOWA INFORMACJA] Wyjmuję pizze: 3 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3863 22:35:53:190) Wyjmuję pizze: 3. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3863 22:35:53:190) Przygotowuję pizze: 7.
+(3867 22:35:53:190) Dodałem pizze: 6. Liczba pizz w piecu: 5.
+(3870 22:35:53:190) Pobieram pizze: 3. Liczba pizz na stole: 0.
+(3859 22:35:53:190) [DODATKOWA INFORMACJA] Wyjmuję pizze: 1 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3859 22:35:53:191) Wyjmuję pizze: 1. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3859 22:35:53:191) Przygotowuję pizze: 3.
+(3861 22:35:53:191) Dodałem pizze: 0. Liczba pizz w piecu: 5.
+(3873 22:35:53:191) Pobieram pizze: 1. Liczba pizz na stole: 0.
+(3862 22:35:53:192) [DODATKOWA INFORMACJA] Wyjmuję pizze: 4 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3862 22:35:53:192) Wyjmuję pizze: 4. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3862 22:35:53:192) Przygotowuję pizze: 1.
+(3868 22:35:53:192) Dodałem pizze: 3. Liczba pizz w piecu: 5.
+(3875 22:35:53:192) Pobieram pizze: 4. Liczba pizz na stole: 0.
+(3864 22:35:53:407) [DODATKOWA INFORMACJA] Wyjmuję pizze: 1 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3864 22:35:53:407) Wyjmuję pizze: 1. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3864 22:35:53:407) Przygotowuję pizze: 5.
+(3866 22:35:53:407) Dodałem pizze: 5. Liczba pizz w piecu: 5.
+(3869 22:35:53:408) Pobieram pizze: 1. Liczba pizz na stole: 0.
+(3861 22:35:57:204) [DODATKOWA INFORMACJA] Wyjmuję pizze: 5 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3861 22:35:57:205) Wyjmuję pizze: 5. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3861 22:35:57:205) Przygotowuję pizze: 4.
+(3865 22:35:57:205) Dodałem pizze: 6. Liczba pizz w piecu: 5.
+(3876 22:35:57:205) Pobieram pizze: 5. Liczba pizz na stole: 0.
+(3870 22:35:57:410) Dostarczam pizze: 3.
+(3871 22:35:57:410) Dostarczam pizze: 2.
+(3873 22:35:57:410) Dostarczam pizze: 1.
+(3868 22:35:57:514) [DODATKOWA INFORMACJA] Wyjmuję pizze: 6 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3868 22:35:57:514) Wyjmuję pizze: 6. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3868 22:35:57:514) Przygotowuję pizze: 6.
+(3877 22:35:57:514) Pobieram pizze: 6. Liczba pizz na stole: 0.
+(3863 22:35:57:514) Dodałem pizze: 7. Liczba pizz w piecu: 5.
+(3867 22:35:57:692) [DODATKOWA INFORMACJA] Wyjmuję pizze: 0 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3867 22:35:57:692) Wyjmuję pizze: 0. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3867 22:35:57:692) Przygotowuję pizze: 1.
+(3862 22:35:57:692) Dodałem pizze: 1. Liczba pizz w piecu: 5.
+(3874 22:35:57:692) Pobieram pizze: 0. Liczba pizz na stole: 0.
+(3875 22:35:57:895) Dostarczam pizze: 4.
+(3860 22:35:58:011) [DODATKOWA INFORMACJA] Wyjmuję pizze: 3 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3860 22:35:58:011) Wyjmuję pizze: 3. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3860 22:35:58:011) Przygotowuję pizze: 1.
+(3864 22:35:58:011) Dodałem pizze: 5. Liczba pizz w piecu: 5.
+(3872 22:35:58:011) Pobieram pizze: 3. Liczba pizz na stole: 0.
+(3869 22:35:58:108) Dostarczam pizze: 1.
+(3866 22:35:58:211) [DODATKOWA INFORMACJA] Wyjmuję pizze: 5 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3866 22:35:58:211) Wyjmuję pizze: 5. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3866 22:35:58:211) Przygotowuję pizze: 7.
+(3859 22:35:58:211) Dodałem pizze: 3. Liczba pizz w piecu: 5.
+(3878 22:35:58:211) Pobieram pizze: 5. Liczba pizz na stole: 0.
+(3865 22:36:01:206) [DODATKOWA INFORMACJA] Wyjmuję pizze: 6 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3865 22:36:01:206) Wyjmuję pizze: 6. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3865 22:36:01:206) Przygotowuję pizze: 6.
+(3861 22:36:01:206) Dodałem pizze: 4. Liczba pizz w piecu: 5.
+(3876 22:36:01:605) Dostarczam pizze: 5.
+(3870 22:36:01:611) Pobieram pizze: 6. Liczba pizz na stole: 0.
+(3877 22:36:01:615) Dostarczam pizze: 6.
+(3862 22:36:01:799) [DODATKOWA INFORMACJA] Wyjmuję pizze: 7 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3862 22:36:01:799) Wyjmuję pizze: 7. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3862 22:36:01:799) Przygotowuję pizze: 3.
+(3860 22:36:01:799) Dodałem pizze: 1. Liczba pizz w piecu: 5.
+(3873 22:36:01:811) Pobieram pizze: 7. Liczba pizz na stole: 0.
+(3863 22:36:01:915) [DODATKOWA INFORMACJA] Wyjmuję pizze: 1 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3863 22:36:01:916) Wyjmuję pizze: 1. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3863 22:36:01:916) Przygotowuję pizze: 0.
+(3868 22:36:01:916) Dodałem pizze: 6. Liczba pizz w piecu: 5.
+(3874 22:36:02:192) Dostarczam pizze: 0.
+(3871 22:36:02:311) Pobieram pizze: 1. Liczba pizz na stole: 0.
+(3859 22:36:02:311) [DODATKOWA INFORMACJA] Wyjmuję pizze: 5 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3859 22:36:02:311) Wyjmuję pizze: 5. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3859 22:36:02:311) Przygotowuję pizze: 1.
+(3866 22:36:02:311) Dodałem pizze: 7. Liczba pizz w piecu: 5.
+(3864 22:36:02:311) [DODATKOWA INFORMACJA] Wyjmuję pizze: 3 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3864 22:36:02:311) Wyjmuję pizze: 3. Liczba pizz w piecu: 4 Liczba pizz na stole: 2.
+(3864 22:36:02:311) Przygotowuję pizze: 8.
+(3867 22:36:02:311) Dodałem pizze: 1. Liczba pizz w piecu: 5.
+(3878 22:36:02:412) Dostarczam pizze: 5.
+(3869 22:36:02:509) Pobieram pizze: 5. Liczba pizz na stole: 1.
+(3875 22:36:02:796) Pobieram pizze: 3. Liczba pizz na stole: 0.
+
+
+
+
+Dla wersji 2:
+
+
+
+M = 3, N = 1
+========================================================================================================================
+(3929 22:36:34:492) Przygotowuję pizze: 2.
+(3930 22:36:34:492) Przygotowuję pizze: 0.
+(3931 22:36:34:492) Przygotowuję pizze: 6.
+(3931 22:36:35:492) Dodałem pizze: 6. Liczba pizz w piecu: 1.
+(3929 22:36:35:693) Dodałem pizze: 2. Liczba pizz w piecu: 2.
+(3930 22:36:36:092) Dodałem pizze: 0. Liczba pizz w piecu: 3.
+(3931 22:36:40:093) [DODATKOWA INFORMACJA] Wyjmuję pizze: 6 Na razie trzymam ją w rękach. Liczba pizz w piecu: 2.
+(3931 22:36:40:093) Wyjmuję pizze: 6. Liczba pizz w piecu: 2 Liczba pizz na stole: 1.
+(3931 22:36:40:093) Przygotowuję pizze: 7.
+(3932 22:36:40:093) Pobieram pizze: 6. Liczba pizz na stole: 0.
+(3929 22:36:40:593) [DODATKOWA INFORMACJA] Wyjmuję pizze: 2 Na razie trzymam ją w rękach. Liczba pizz w piecu: 1.
+(3929 22:36:40:593) Wyjmuję pizze: 2. Liczba pizz w piecu: 1 Liczba pizz na stole: 1.
+(3929 22:36:40:593) Przygotowuję pizze: 1.
+(3930 22:36:40:693) [DODATKOWA INFORMACJA] Wyjmuję pizze: 0 Na razie trzymam ją w rękach. Liczba pizz w piecu: 0.
+(3930 22:36:40:693) Wyjmuję pizze: 0. Liczba pizz w piecu: 0 Liczba pizz na stole: 2.
+(3930 22:36:40:693) Przygotowuję pizze: 4.
+(3931 22:36:41:098) Dodałem pizze: 7. Liczba pizz w piecu: 1.
+(3929 22:36:41:593) Dodałem pizze: 1. Liczba pizz w piecu: 2.
+(3930 22:36:42:294) Dodałem pizze: 4. Liczba pizz w piecu: 3.
+(3932 22:36:44:293) Dostarczam pizze: 6.
+(3931 22:36:45:199) [DODATKOWA INFORMACJA] Wyjmuję pizze: 7 Na razie trzymam ją w rękach. Liczba pizz w piecu: 2.
+(3931 22:36:45:199) Wyjmuję pizze: 7. Liczba pizz w piecu: 2 Liczba pizz na stole: 3.
+(3931 22:36:45:199) Przygotowuję pizze: 7.
+(3929 22:36:45:894) [DODATKOWA INFORMACJA] Wyjmuję pizze: 1 Na razie trzymam ją w rękach. Liczba pizz w piecu: 1.
+(3929 22:36:45:895) Wyjmuję pizze: 1. Liczba pizz w piecu: 1 Liczba pizz na stole: 4.
+(3929 22:36:45:895) Przygotowuję pizze: 2.
+(3931 22:36:46:902) Dodałem pizze: 7. Liczba pizz w piecu: 2.
+(3930 22:36:47:094) [DODATKOWA INFORMACJA] Wyjmuję pizze: 4 Na razie trzymam ją w rękach. Liczba pizz w piecu: 1.
+(3930 22:36:47:094) Wyjmuję pizze: 4. Liczba pizz w piecu: 1 Liczba pizz na stole: 5.
+(3930 22:36:47:094) Przygotowuję pizze: 6.
+(3929 22:36:47:095) Dodałem pizze: 2. Liczba pizz w piecu: 2.
+(3932 22:36:48:894) Pobieram pizze: 2. Liczba pizz na stole: 4.
+(3930 22:36:48:894) Dodałem pizze: 6. Liczba pizz w piecu: 3.
+(3931 22:36:51:002) [DODATKOWA INFORMACJA] Wyjmuję pizze: 7 Na razie trzymam ją w rękach. Liczba pizz w piecu: 2.
+(3931 22:36:51:002) Wyjmuję pizze: 7. Liczba pizz w piecu: 2 Liczba pizz na stole: 5.
+(3931 22:36:51:002) Przygotowuję pizze: 8.
+(3929 22:36:51:598) [DODATKOWA INFORMACJA] Wyjmuję pizze: 2 Na razie trzymam ją w rękach. Liczba pizz w piecu: 1.
+(3931 22:36:52:516) Dodałem pizze: 8. Liczba pizz w piecu: 2.
+
+
+
+
+M = 10, N = 10
+========================================================================================================================
+
+(3693 22:29:50:377) Przygotowuję pizze: 7.
+(3692 22:29:50:377) Przygotowuję pizze: 7.
+(3694 22:29:50:377) Przygotowuję pizze: 0.
+(3696 22:29:50:378) Przygotowuję pizze: 9.
+(3701 22:29:50:379) Przygotowuję pizze: 3.
+(3700 22:29:50:379) Przygotowuję pizze: 9.
+(3697 22:29:50:379) Przygotowuję pizze: 8.
+(3695 22:29:50:380) Przygotowuję pizze: 6.
+(3699 22:29:50:380) Przygotowuję pizze: 8.
+(3698 22:29:50:380) Przygotowuję pizze: 6.
+(3695 22:29:51:513) Dodałem pizze: 6. Liczba pizz w piecu: 1.
+(3700 22:29:51:582) Dodałem pizze: 9. Liczba pizz w piecu: 2.
+(3693 22:29:51:677) Dodałem pizze: 7. Liczba pizz w piecu: 3.
+(3696 22:29:51:681) Dodałem pizze: 9. Liczba pizz w piecu: 4.
+(3697 22:29:51:880) Dodałem pizze: 8. Liczba pizz w piecu: 5.
+(3700 22:29:55:588) [DODATKOWA INFORMACJA] Wyjmuję pizze: 6 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3700 22:29:55:588) Wyjmuję pizze: 6. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3700 22:29:55:588) Przygotowuję pizze: 4.
+(3699 22:29:55:588) Dodałem pizze: 8. Liczba pizz w piecu: 5.
+(3707 22:29:55:588) Pobieram pizze: 6. Liczba pizz na stole: 0.
+(3696 22:29:55:688) [DODATKOWA INFORMACJA] Wyjmuję pizze: 9 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3692 22:29:55:688) Dodałem pizze: 7. Liczba pizz w piecu: 5.
+(3696 22:29:55:688) Wyjmuję pizze: 9. Liczba pizz w piecu: 5 Liczba pizz na stole: 1.
+(3696 22:29:55:688) Przygotowuję pizze: 4.
+(3704 22:29:55:688) Pobieram pizze: 9. Liczba pizz na stole: 0.
+(3695 22:29:56:014) [DODATKOWA INFORMACJA] Wyjmuję pizze: 7 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3695 22:29:56:014) Wyjmuję pizze: 7. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3695 22:29:56:014) Przygotowuję pizze: 3.
+(3694 22:29:56:014) Dodałem pizze: 0. Liczba pizz w piecu: 5.
+(3706 22:29:56:014) Pobieram pizze: 7. Liczba pizz na stole: 0.
+(3693 22:29:56:380) [DODATKOWA INFORMACJA] Wyjmuję pizze: 9 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3693 22:29:56:380) Wyjmuję pizze: 9. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3693 22:29:56:380) Przygotowuję pizze: 6.
+(3701 22:29:56:380) Dodałem pizze: 3. Liczba pizz w piecu: 5.
+(3708 22:29:56:380) Pobieram pizze: 9. Liczba pizz na stole: 0.
+(3697 22:29:56:488) [DODATKOWA INFORMACJA] Wyjmuję pizze: 8 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3697 22:29:56:488) Wyjmuję pizze: 8. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3697 22:29:56:488) Przygotowuję pizze: 5.
+(3698 22:29:56:488) Dodałem pizze: 6. Liczba pizz w piecu: 5.
+(3709 22:29:56:488) Pobieram pizze: 8. Liczba pizz na stole: 0.
+(3699 22:29:59:789) [DODATKOWA INFORMACJA] Wyjmuję pizze: 8 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3699 22:29:59:789) Wyjmuję pizze: 8. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3699 22:29:59:789) Przygotowuję pizze: 8.
+(3700 22:29:59:789) Dodałem pizze: 4. Liczba pizz w piecu: 5.
+(3703 22:29:59:789) Pobieram pizze: 8. Liczba pizz na stole: 0.
+(3704 22:30:00:106) Dostarczam pizze: 9.
+(3692 22:30:00:106) [DODATKOWA INFORMACJA] Wyjmuję pizze: 7 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3692 22:30:00:106) Wyjmuję pizze: 7. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3692 22:30:00:106) Przygotowuję pizze: 2.
+(3696 22:30:00:106) Dodałem pizze: 4. Liczba pizz w piecu: 5.
+(3705 22:30:00:106) Pobieram pizze: 7. Liczba pizz na stole: 0.
+(3707 22:30:00:289) Dostarczam pizze: 6.
+(3706 22:30:00:315) Dostarczam pizze: 7.
+(3701 22:30:00:798) [DODATKOWA INFORMACJA] Wyjmuję pizze: 0 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3701 22:30:00:798) Wyjmuję pizze: 0. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3701 22:30:00:798) Przygotowuję pizze: 6.
+(3695 22:30:00:798) Dodałem pizze: 3. Liczba pizz w piecu: 5.
+(3711 22:30:00:798) Pobieram pizze: 0. Liczba pizz na stole: 0.
+(3694 22:30:00:817) [DODATKOWA INFORMACJA] Wyjmuję pizze: 3 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3694 22:30:00:817) Wyjmuję pizze: 3. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3694 22:30:00:817) Przygotowuję pizze: 7.
+(3697 22:30:00:817) Dodałem pizze: 5. Liczba pizz w piecu: 5.
+(3702 22:30:00:817) Pobieram pizze: 3. Liczba pizz na stole: 0.
+(3709 22:30:00:888) Dostarczam pizze: 8.
+(3708 22:30:00:982) Dostarczam pizze: 9.
+(3698 22:30:01:388) [DODATKOWA INFORMACJA] Wyjmuję pizze: 6 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3698 22:30:01:388) Wyjmuję pizze: 6. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3698 22:30:01:388) Przygotowuję pizze: 3.
+(3693 22:30:01:388) Dodałem pizze: 6. Liczba pizz w piecu: 5.
+(3710 22:30:01:388) Pobieram pizze: 6. Liczba pizz na stole: 0.
+(3700 22:30:04:091) [DODATKOWA INFORMACJA] Wyjmuję pizze: 4 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3700 22:30:04:091) Wyjmuję pizze: 4. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3700 22:30:04:091) Przygotowuję pizze: 9.
+(3699 22:30:04:091) Dodałem pizze: 8. Liczba pizz w piecu: 5.
+(3703 22:30:04:091) Dostarczam pizze: 8.
+(3707 22:30:04:689) Pobieram pizze: 4. Liczba pizz na stole: 0.
+(3696 22:30:04:809) [DODATKOWA INFORMACJA] Wyjmuję pizze: 4 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3692 22:30:04:809) Dodałem pizze: 2. Liczba pizz w piecu: 5.
+(3696 22:30:04:809) Wyjmuję pizze: 4. Liczba pizz w piecu: 5 Liczba pizz na stole: 1.
+(3696 22:30:04:809) Przygotowuję pizze: 0.
+(3702 22:30:04:820) Dostarczam pizze: 3.
+(3705 22:30:04:907) Dostarczam pizze: 7.
+(3704 22:30:05:006) Pobieram pizze: 4. Liczba pizz na stole: 0.
+(3711 22:30:05:112) Dostarczam pizze: 0.
+(3695 22:30:05:300) [DODATKOWA INFORMACJA] Wyjmuję pizze: 3 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3695 22:30:05:300) Wyjmuję pizze: 3. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3695 22:30:05:300) Przygotowuję pizze: 1.
+(3706 22:30:05:300) Pobieram pizze: 3. Liczba pizz na stole: 0.
+(3694 22:30:05:300) Dodałem pizze: 7. Liczba pizz w piecu: 5.
+(3693 22:30:05:391) [DODATKOWA INFORMACJA] Wyjmuję pizze: 5 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3693 22:30:05:391) Wyjmuję pizze: 5. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3693 22:30:05:391) Przygotowuję pizze: 4.
+(3701 22:30:05:391) Dodałem pizze: 6. Liczba pizz w piecu: 5.
+(3708 22:30:05:391) Pobieram pizze: 5. Liczba pizz na stole: 0.
+(3697 22:30:05:717) [DODATKOWA INFORMACJA] Wyjmuję pizze: 6 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3697 22:30:05:717) Wyjmuję pizze: 6. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3697 22:30:05:717) Przygotowuję pizze: 2.
+(3709 22:30:05:717) Pobieram pizze: 6. Liczba pizz na stole: 0.
+(3698 22:30:05:717) Dodałem pizze: 3. Liczba pizz w piecu: 5.
+(3710 22:30:06:290) Dostarczam pizze: 6.
+(3699 22:30:08:811) [DODATKOWA INFORMACJA] Wyjmuję pizze: 8 Na razie trzymam ją w rękach. Liczba pizz w piecu: 4.
+(3699 22:30:08:811) Wyjmuję pizze: 8. Liczba pizz w piecu: 4 Liczba pizz na stole: 1.
+(3699 22:30:08:811) Przygotowuję pizze: 5.
+(3700 22:30:08:811) Dodałem pizze: 9. Liczba pizz w piecu: 5.
+(3703 22:30:08:811) Pobieram pizze: 8. Liczba pizz na stole: 0.
+(3707 22:30:08:894) Dostarczam pizze: 4.
+(3704 22:30:09:007) Dostarczam pizze: 4.
+(3708 22:30:09:425) Dostarczam pizze: 5.
+
+
