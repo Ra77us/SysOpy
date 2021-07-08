@@ -1,24 +1,43 @@
-# Zadania laboratorium 2
-We wszystkich poniższych zadaniach proszę skorzystać z obu wariantów implementacji:
+# Zadania - Zestaw 6
+## IPC - kolejki komunikatów
+**Przydatne funkcje:**
+
+System V:
+
+<sys/msg.h> <sys/ipc.h> - msgget, msgctl, msgsnd, msgrcv, ftok
+
+POSIX:
+
+<mqueue.h> - mq_open, mq_send, mq_receive, mq_getattr, mq_setattr, mq_close, mq_unlink, mq_notify
+
+## Zadanie 1. Prosty chat - System V (50%)
+Napisz prosty program typu klient-serwer, w którym komunikacja zrealizowana jest za pomocą kolejek komunikatów.
+Serwer po uruchomieniu tworzy nową kolejkę komunikatów systemu V. Za pomocą tej kolejki klienci będą wysyłać komunikaty do serwera. Wysyłane zlecenia mają zawierać rodzaj zlecenia jako rodzaj komunikatu oraz informację od którego klienta zostały wysłane (ID klienta), w odpowiedzi rodzajem komunikatu ma być informacja identyfikująca czekającego na nią klienta.
+Klient bezpośrednio po uruchomieniu tworzy kolejkę z unikalnym kluczem IPC i wysyła jej klucz komunikatem do serwera (komunikat INIT). Po otrzymaniu takiego komunikatu, serwer otwiera kolejkę klienta, przydziela klientowi identyfikator (np. numer w kolejności zgłoszeń) i odsyła ten identyfikator do klienta (komunikacja w kierunku serwer->klient odbywa się za pomocą kolejki klienta). Po otrzymaniu identyfikatora, klient może wysłać zlecenie do serwera(zlecenia są czytane ze standardowego wyjścia w postaci typ_komunikatu).
+Serwer ma umożliwiać łączenie klientów w pary - klienci przechodząc do trybu chatu będą mogli wysyłać sobie bezpośrednio wiadomości bez udziału serwera.
 
 
-* lib - przy użyciu funkcji biblioteki C: fread() i fwrite()
-* sys - przy użyciu funkcji systemowych: read() i write()
+Rodzaje zleceń
 
-## Zadanie 1 (20%) 
-Napisz program, który otwiera dwa pliki o nazwach podanych w wierszu poleceń. Jeśli argumentów nie podano, wówczas nazwy plików mają być pobrane od użytkownika. Program powinien wyświetlać wiersze z obu plików naprzemienne, to znaczy: 1-szą linię z pierwszego pliku, 1-szą linię z drugiego pliku, 2-gą linię z pierwszego pliku, 2-gą linię z drugiego pliku, itd., aż do momentu, wyświetlenia ostatniego wiersza pliku zawierającego większą liczbę wierszy.
+* LIST:  
+Zlecenie wypisania listy wszystkich aktywnych klientów wraz z informacja czy są dostępni do połączenia.
+* CONNECT id_klienta:  
+Zlecenie połączenia się z konkretnym klientem. Zleceniodawca wysyła do serwera id_klienta z listy aktywnych klientów. Serwer wysyła mu klucz kolejki klienta z którym chce się połączyć. Następnie serwer wysyła klucz kolejki zleceniodawcy do wybranego klienta. Obaj klienci przechodzą w tryb chatu - wysyłają sobie wiadomości bezpośrednio(bez udziału serwera). Serwer oznacza ich jako niedostępnych do połączenia dla innych klientów. (Należy umożliwić zerwanie połączenia - co skutkuje wysłaniem DISCONNECT do serwera).
+* DISCONNECT:  
+Zlecenie ustawienia klienta jako dostępnego do połączenia.
+* STOP:  
 
-## Zadanie 2 (20%) 
-Napisz program, który przyjmuje 2 argumenty wiersza poleceń. Pierwszy z argumentów jest znakiem, drugi nazwą pliku. Program powinien wyświetlić na ekranie tylko te wiersze pliku wejściowego,które zawierają dany znak. Zakładamy, że każdy wiersz w pliku kończy się znakiem przejścia do nowej linii. Przyjmujemy, że żaden wiersz nie przekracza długości 256 znaków.
+Zgłoszenie zakończenia pracy klienta.  Klient wysyła ten komunikat, kiedy kończy pracę, aby serwer mógł usunąć z listy jego kolejkę. Następnie kończy pracę, usuwając swoją kolejkę. Komunikat ten wysyłany jest również, gdy po stronie klienta zostanie wysłany sygnał SIGINT.
+Zlecenia powinny być obsługiwane zgodnie z priorytetami, najwyższy priorytet ma STOP, potem DISCONNECT oraz LIST i reszta. Można tego dokonać poprzez sterowanie parametrem MTYPE w funkcji msgsnd.
+Poszczególne rodzaje komunikatów należy identyfikować za pomocą typów komunikatów systemu V. Klucze dla kolejek mają być generowane na podstawie ścieżki $HOME. Małe liczby do wygenerowania kluczy oraz rodzaje komunikatów mają być zdefiniowane we wspólnym pliku nagłówkowym. Dla uproszczenia można założyć, że długość komunikatu jest ograniczona pewną stałą (jej definicja powinna znaleźć się w pliku nagłówkowym).
+Klient i serwer należy napisać w postaci osobnych programów (nie korzystamy z funkcji _fork_). Serwer musi być w stanie pracować z wieloma klientami naraz. Przed zakończeniem pracy każdy proces powinien usunąć kolejkę którą utworzył (patrz _IPC_RMID_ oraz funkcja _atexit_). Dla uproszczenia można przyjąć, że serwer przechowuje informacje o klientach w statycznej tablicy (rozmiar tablicy ogranicza liczbę klientów, którzy mogą się zgłosić do serwera).
 
-## Zadanie 3 (20%) 
-W pliku dane.txt znajdują się w kolejnych wierszach losowe liczby.Do pliku a.txt wpisz ilość liczb parzystych znajdujących się w pliku dane.txt w następującej postaci: ”Liczb parzystych jest [ilość liczb]”. Do pliku b.txt skopiuj wszystkie liczby z pliku dane.txt, w których cyfra dziesiątek jest równa 7 lub 0.Do pliku c.txt skopiuj wszystkie liczby, które są kwadratami liczb całkowitych, np. taką liczbą jest liczba 225, ponieważ 225 = 15^2.
+Serwer może wysłać do klientów komunikaty:  
+* inicjujący pracę klienta w trybie chatu (kolejka klientów)
+* wysyłający odpowiedzi do klientów (kolejki klientów)
+* informujący klientów o zakończeniu pracy serwera - po wysłaniu takiego sygnału i odebraniu wiadomości STOP od wszystkich klientów serwer usuwa swoją kolejkę i kończy pracę. (kolejki klientów)
 
-## Zadanie 4 (20%) 
-Napisz funkcję, która jako parametry pobiera nazwę pliku do odczytu, nazwę pliku do zapisu oraz 2 napisy,n1 oraz n2(tablice znaków). Zadaniem funkcji jest przepisanie pliku wejściowego do wyjściowego w taki sposób, że każde wystąpienie napisu n1 w pliku wejściowym ma zostać zamienione na napis n2 w pliku wyjściowym.
+Należy obsłużyć przerwanie działania serwera lub klienta za pomocą CTRL+C. Po stronie klienta obsługa tego sygnału jest równoważna z wysłaniem komunikatu STOP.
 
-## Zadanie 5 (20%) 
-Napisz program, który kopiując podany plik (parametr programu) do innego pliku (drugi parametr programu), ”łamie” wiersze, które mają więcej niż 50 znaków (łącznie ze spacjami). Znaki po-wyżej 50-tego przenoszone są do nowej linii (dodatkowy wiersz). Wiersze krótsze kopiowane są bez zmian  
-
-
-### Dla obu wariantów implementacji należy przeprowadzić pomiar czasu wykonywania obu wariantów programów. Wyniki należy przedstawić w formie pliku pomiar_zad_x.txt 
+## Zadanie 2. Prosty chat - POSIX (50%)
+Zrealizuj zadanie analogiczne do Zadania 1, wykorzystując kolejki komunikatów _POSIX_. Kolejka klienta powinna mieć losową nazwę zgodną z wymaganiami stawianymi przez POSIX. Na typ komunikatu można zarezerwować pierwszy bajt jego treści. Obsługa zamykania kolejek analogiczna jak w zadaniu 1, z tym, że aby można było usunąć kolejkę, wszystkie procesy powinny najpierw ją zamknąć. Przed zakończeniem pracy klient wysyła do serwera komunikat informujący, że serwer powinien zamknąć po swojej stronie kolejkę klienta. Następnie klient zamyka i usuwa swoją kolejkę. Serwer przed zakończeniem pracy zamyka wszystkie otwarte kolejki, informuje klientów, aby usunęli swoje kolejki oraz zamknęli kolejkę serwera i usuwa kolejkę, którą utworzył.

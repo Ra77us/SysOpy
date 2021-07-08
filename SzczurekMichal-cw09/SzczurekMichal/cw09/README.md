@@ -1,24 +1,43 @@
-# Zadania laboratorium 2
-We wszystkich poniższych zadaniach proszę skorzystać z obu wariantów implementacji:
+# Zadania - Zestaw 9
+## Opis problemu:
+W ramach zadania należy zaimplementować rozwiązanie problemu Świętego Mikołaja.
 
+Święty Mikołaj śpi w swoim warsztacie na biegunie północnym i może być obudzony tylko w 2 sytuacjach: 
+1) wszystkie 9 reniferów wróciło z wakacji,
+2) 3 z 10 elfów ma problemy przy produkcji zabawek.
 
-* lib - przy użyciu funkcji biblioteki C: fread() i fwrite()
-* sys - przy użyciu funkcji systemowych: read() i write()
+Kiedy problemy 3 elfów są rozwiązywane przez Mikołaja to pozostałe nie zgłaszają swoich problemów aż do powrotu pierwszej trójki.
 
-## Zadanie 1 (20%) 
-Napisz program, który otwiera dwa pliki o nazwach podanych w wierszu poleceń. Jeśli argumentów nie podano, wówczas nazwy plików mają być pobrane od użytkownika. Program powinien wyświetlać wiersze z obu plików naprzemienne, to znaczy: 1-szą linię z pierwszego pliku, 1-szą linię z drugiego pliku, 2-gą linię z pierwszego pliku, 2-gą linię z drugiego pliku, itd., aż do momentu, wyświetlenia ostatniego wiersza pliku zawierającego większą liczbę wierszy.
+Jeśli Mikołaj się obudzi i zastanie jednocześnie 9 reniferów i 3 elfy przed swoim warsztatem to stwierdza że problemy elfów mogą poczekać i ważniejsze jest rozwiezienie prezentów. 
 
-## Zadanie 2 (20%) 
-Napisz program, który przyjmuje 2 argumenty wiersza poleceń. Pierwszy z argumentów jest znakiem, drugi nazwą pliku. Program powinien wyświetlić na ekranie tylko te wiersze pliku wejściowego,które zawierają dany znak. Zakładamy, że każdy wiersz w pliku kończy się znakiem przejścia do nowej linii. Przyjmujemy, że żaden wiersz nie przekracza długości 256 znaków.
+Należy zaimplementować program, w którym Mikołaj, renifery oraz elfy to osobne wątki.
 
-## Zadanie 3 (20%) 
-W pliku dane.txt znajdują się w kolejnych wierszach losowe liczby.Do pliku a.txt wpisz ilość liczb parzystych znajdujących się w pliku dane.txt w następującej postaci: ”Liczb parzystych jest [ilość liczb]”. Do pliku b.txt skopiuj wszystkie liczby z pliku dane.txt, w których cyfra dziesiątek jest równa 7 lub 0.Do pliku c.txt skopiuj wszystkie liczby, które są kwadratami liczb całkowitych, np. taką liczbą jest liczba 225, ponieważ 225 = 15^2.
+Zachowania elfów:
 
-## Zadanie 4 (20%) 
-Napisz funkcję, która jako parametry pobiera nazwę pliku do odczytu, nazwę pliku do zapisu oraz 2 napisy,n1 oraz n2(tablice znaków). Zadaniem funkcji jest przepisanie pliku wejściowego do wyjściowego w taki sposób, że każde wystąpienie napisu n1 w pliku wejściowym ma zostać zamienione na napis n2 w pliku wyjściowym.
+* Pracują przez losowy okres czasu (2-5s).
+* Chcą zgłosić problem - jeśli liczba oczekujących elfów przed warsztatem Mikołaja jest mniejsza od 3 to idzie przed warsztat (Komunikat: Elf: czeka _ elfów na Mikołaja, ID), w przeciwnym wypadku czeka na powrót pierwszej trójki i dopiero wtedy idzie przed warsztat (Komunikat: Elf: czeka na powrót elfów, ID)
+* Jeśli jest trzecim elfem przed warsztatem to wybudza Mikołaja. (Komunikat: Elf: wybudzam Mikołaja, ID)
+* Mikołaj się z nimi spotyka. (Komunikat: Elf: Mikołaj rozwiązuje problem, ID) (1-2s)
+* Wraca do pracy
 
-## Zadanie 5 (20%) 
-Napisz program, który kopiując podany plik (parametr programu) do innego pliku (drugi parametr programu), ”łamie” wiersze, które mają więcej niż 50 znaków (łącznie ze spacjami). Znaki po-wyżej 50-tego przenoszone są do nowej linii (dodatkowy wiersz). Wiersze krótsze kopiowane są bez zmian  
+Zachowania reniferów:
 
+* Są na wakacjach w ciepłych krajach losowy okres czasu (5-10s)
+* Wracaja na biegun północny (Komunikat: Renifer: czeka _ reniferów na Mikołaja, ID), jeśli jest dziewiątym reniferem to wybudza Mikołaja (Komunikat: Renifer: wybudzam Mikołaja, ID).
+* Dostarczają zabawki grzecznym dzieciom (i studentom którzy nie spóźniają się z dostarczaniem zestawów) przez (2-4s).   
+* Lecą na wakacje.
 
-### Dla obu wariantów implementacji należy przeprowadzić pomiar czasu wykonywania obu wariantów programów. Wyniki należy przedstawić w formie pliku pomiar_zad_x.txt 
+Zachowania Mikołaja:
+
+* Śpi.
+* Kiedy zostaje wybudzony (Komunikat: Mikołaj: budzę się):
+  * 1) i jest 9 reniferów to dostarcza zabawki (Komunikat: Mikołaj: dostarczam zabawki) (2-4s).
+  * 2) i są 3 elfy to bierze je do swojego warsztatu i rozwiązuje problemy (Komunikat: Mikołaj: rozwiązuje problemy elfów _ _ _ ID) (1-2).
+* Wraca do snu (Komunikat: Mikołaj: zasypiam).
+
+Program należy zaimplementować korzystając z wątków i mechanizmów synchronizacji biblioteki POSIX Threads. Po uruchomieniu programu wątek główny tworzy wątki dla Mikołaja, reniferów oraz elfów. Możemy założyć że Mikołaj dostarczy 3 razy prezenty, po czym kończy działanie wszystkich wątków. Do spania Mikołaja powinny być wykorzystane Warunki Sprawdzające (Condition Variables). Użycie odpowiednich mechanizmów ma zagwarantować niedopouszczenie, np. do zdarzeń:
+
+* Mikołaj śpi chociaż czeka na niego 9 reniferów lub 3 elfy.
+* Na Mikołaja czeka więcej niż 3 elfy.
+
+Pełne rozwiązanie zadania - 100%. Wersja uproszczona - (Mikołaj i renifery) lub (Mikołaj i elfy) - 60%.
