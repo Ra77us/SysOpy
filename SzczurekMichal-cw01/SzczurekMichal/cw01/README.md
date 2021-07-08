@@ -8,13 +8,13 @@ Zaprojektuj i przygotuj zestaw funkcji (bibliotekę) do zarządzania tablicą bl
   
 
 * Utworzenie tablicy wskaźników (tablicy głównej) — w tej tablicy będą przechowywane wskaźniki na wiersze zmergowanych plików — pierwszy element tablicy głównej zawiera wykaz wierszy pierwszej pary zmergowanych plików, drugi element dla drugiej pary, itd. Pojedynczy blok wierszy (element wskazywany z tablicy głównej), to tablica wskaźników na poszczególne wiersze w zmergowanym pliku
-*Definiowanie sekwencji par plików
-*Przeprowadzenie zmergowania (dla każdego elementu sekwencji) oraz zapisanie wyniku zmergowania do pliku tymczasowego
-*Utworzenie, na podstawie zawartość pliku tymczasowego, bloku wierszy — tablicy wskaźników na wiersze, ustawienie w tablicy głównej (wskaźników) wskazania na ten blok; na końcu, funkcja powinna zwrócić indeks elementu tablicy (głównej), który zawiera wskazanie na utworzony blok
-*Zwrócenie informacji o ilości wierszy w danym bloku wierszy
-*Usunięcie, z pamięci, bloku (wierszy) o zadanym indeksie
-*Usunięcie, z pamięci, określonego wiersza dla podanego bloku wierszy
-*Wypisanie zmergowanych plików, z uwzględnieniem wcześniejszych usuniętych bloków wierszy / wierszy
+* Definiowanie sekwencji par plików
+* Przeprowadzenie zmergowania (dla każdego elementu sekwencji) oraz zapisanie wyniku zmergowania do pliku tymczasowego
+* Utworzenie, na podstawie zawartość pliku tymczasowego, bloku wierszy — tablicy wskaźników na wiersze, ustawienie w tablicy głównej (wskaźników) wskazania na ten blok; na końcu, funkcja powinna zwrócić indeks elementu tablicy (głównej), który zawiera wskazanie na utworzony blok
+* Zwrócenie informacji o ilości wierszy w danym bloku wierszy
+* Usunięcie, z pamięci, bloku (wierszy) o zadanym indeksie
+* Usunięcie, z pamięci, określonego wiersza dla podanego bloku wierszy
+* Wypisanie zmergowanych plików, z uwzględnieniem wcześniejszych usuniętych bloków wierszy / wierszy
 
 **Przykład** — załóżmy, że sekwencja nazw plików zawiera tylko jedną parę ('a.txt', 'b.txt').
 
@@ -75,8 +75,8 @@ Mierząc czasy poszczególnych operacji, zapisz trzy wartości: czas rzeczywisty
 ## Zadanie 3. Testy i pomiary (50%)
 a. (25%) Przygotuj plik Makefile, zawierający polecenie uruchamiania testów oraz polecenia kompilacji programu z zad 2 na trzy sposoby:  
 * Z wykorzystaniem bibliotek statycznych,
-*Z wykorzystaniem bibliotek dzielonych (dynamiczne, ładowane przy uruchomieniu programu),
-*Z wykorzystaniem bibliotek ładowanych dynamicznie (dynamiczne, ładowane przez program).
+* Z wykorzystaniem bibliotek dzielonych (dynamiczne, ładowane przy uruchomieniu programu),
+* Z wykorzystaniem bibliotek ładowanych dynamicznie (dynamiczne, ładowane przez program).
 Wyniki pomiarów zbierz w pliku results3a.txt. Otrzymane wyniki krótko skomentuj.  
 
 b.(25%) Rozszerz plik Makefile z punktu 3a) dodając możliwość skompilowania programu na trzech różnych  poziomach optymalizacji — -O0…-Os. Przeprowadź ponownie pomiary, kompilując i uruchamiając program dla różnych poziomów optymalizacji.
